@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-size: 24px;
+  font-family: Roboto;
+  background: url(../two-women-looking-at-the-code.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#root {
+  background: rgba(0, 0, 0, 0.66);
+}
+header {
+  max-height: 99px;
+  background: rgba(26, 145, 255, 0.74);
+  padding-top: 10px;
+}
+header h1 {
+  font-family: Philosopher;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  color: #ffffff;
+  margin-left: 30px;
+}
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+#desc {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 56px;
+  display: flex;
+  align-items: center;
+  margin: 30px;
+  color: #ffffff;
+}
+section form {
+  max-width: 541px;
+  height: 499px;
+  background: rgba(26, 145, 255, 0.75);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 80px;
+  margin-right: 10px;
+}
+label {
+  display: block;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 28px;
+  color: #ffffff;
+}
+input {
+  width: 100%;
+  height: 50px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-size: 20px;
+  margin: 10px 0;
+}
+input[type="submit"] {
+  margin: 30px 0;
+  background: #48d804;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 42px;
+  color: #ffffff;
+  cursor: pointer;
+}
+form a {
+  color: white;
+}
+footer {
+  height: 50px;
+  background: #000000;
+  margin-top: 20px;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+  section form {
+    margin: 10px;
+  }
+  #desc {
+    font-size: 32px;
+  }
+  footer {
+    padding: 0;
+    height: 60px;
+  }
+  header h1 {
+    font-size: 45px;
+  }
+}
