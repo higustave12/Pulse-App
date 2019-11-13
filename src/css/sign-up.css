@@ -9,7 +9,6 @@ body {
 body {
   font-size: 24px;
   font-family: Roboto;
-  background: url(../two-women-looking-at-the-code.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -52,6 +51,9 @@ section form {
   padding: 20px;
   margin-top: 80px;
   margin-right: 10px;
+}
+.signUp {
+  background: url(../two-women-looking-at-the-code.jpg);
 }
 label {
   display: block;

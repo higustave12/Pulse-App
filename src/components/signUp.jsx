@@ -6,7 +6,7 @@ class SignUp extends Component {
   render() {
     return (
       <React.Fragment>
-        <section>
+        <section class="signUp">
           <p id="desc">
             The framework <br /> for evaluating a person’s <br /> performance
             based on the <br />
