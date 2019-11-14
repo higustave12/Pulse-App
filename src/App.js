@@ -1,16 +1,23 @@
-import React from "react";
-import Signup from "./components/signUp";
+import React, { Component } from "react";
+import { Route } from 'react-router-dom';
+import SignUp from "./components/signUp";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import Weekdetails from './components/Engineer/weekdetails';
 
-function App() {
-  return (
-    <>
-      <Header></Header>
-      <Signup></Signup>
-      <Footer></Footer>
-    </>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <div className="content">
+          <Route exact path="/" component={SignUp} />
+          <Route exact path="/weekdetails" component={Weekdetails} />
+        </div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
