@@ -12,9 +12,7 @@ body {
   background-position: center;
   background-size: cover;
 }
-#root {
-  background: rgba(0, 0, 0, 0.66);
-}
+
 header {
   max-height: 99px;
   background: rgba(26, 145, 255, 0.74);
