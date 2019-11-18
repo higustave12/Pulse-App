@@ -17,7 +17,7 @@ const Landing = props => {
   }
   return (
     <React.Fragment>
-      <section class="signUp">
+      <section className="signUp">
         <p id="desc">
           The framework <br /> for evaluating a person’s <br /> performance
           based on the <br />

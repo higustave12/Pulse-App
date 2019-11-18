@@ -19,7 +19,7 @@ body {
   background: rgba(0, 0, 0, 0.66);
   min-height: 100%;
 }
-section {
+.signUp {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
@@ -27,7 +27,7 @@ section {
 #desc {
   font-style: italic;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 30px;
   line-height: 56px;
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@ section {
 }
 section form {
   max-width: 541px;
-  height: 440px;
+  max-height: 480px;
   background: rgba(26, 145, 255, 0.75);
   border-radius: 20px;
   padding: 20px;
@@ -51,17 +51,22 @@ label {
   color: #ffffff;
 }
 input {
-  width: 97%;
+  width: 100%;
   height: 50px;
   border: none;
   outline: none;
   border-radius: 10px;
   font-size: 20px;
-  margin: 10px 0;
+  margin-bottom: 10px !important;
   padding: 0 10px;
 }
+input[type="checkbox"] {
+  height: 14px;
+  width: 20px;
+  margin-left: 5px;
+}
 input[type="submit"] {
-  margin: 30px 0;
+  /* margin-bottom: 30px; */
   background: #48d804;
   border-radius: 25px;
   font-weight: bold;
@@ -75,6 +80,10 @@ form p {
 }
 form a {
   color: white;
+}
+.errors {
+  color: red;
+  background: rgb(118, 189, 255);
 }
 
 @media only screen and (max-width: 768px) {
