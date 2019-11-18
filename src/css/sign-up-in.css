@@ -9,24 +9,17 @@ body {
 body {
   font-size: 24px;
   font-family: Roboto;
+  background: url(../two-women-looking-at-the-code.jpg);
   background-position: center;
   background-size: cover;
 }
-
-header {
-  max-height: 99px;
-  background: rgba(26, 145, 255, 0.74);
-  padding-top: 10px;
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: rgba(0, 0, 0, 0.66);
+  min-height: 100%;
 }
-header h1 {
-  font-family: Philosopher;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 72px;
-  color: #ffffff;
-  margin-left: 30px;
-}
-section {
+.signUp {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
@@ -34,7 +27,7 @@ section {
 #desc {
   font-style: italic;
   font-weight: bold;
-  font-size: 48px;
+  font-size: 30px;
   line-height: 56px;
   display: flex;
   align-items: center;
@@ -43,15 +36,12 @@ section {
 }
 section form {
   max-width: 541px;
-  height: 499px;
+  max-height: 480px;
   background: rgba(26, 145, 255, 0.75);
   border-radius: 20px;
   padding: 20px;
   margin-top: 80px;
   margin-right: 10px;
-}
-.signUp {
-  background: url(../two-women-looking-at-the-code.jpg);
 }
 label {
   display: block;
@@ -67,10 +57,16 @@ input {
   outline: none;
   border-radius: 10px;
   font-size: 20px;
-  margin: 10px 0;
+  margin-bottom: 10px !important;
+  padding: 0 10px;
+}
+input[type="checkbox"] {
+  height: 14px;
+  width: 20px;
+  margin-left: 5px;
 }
 input[type="submit"] {
-  margin: 30px 0;
+  /* margin-bottom: 30px; */
   background: #48d804;
   border-radius: 25px;
   font-weight: bold;
@@ -79,16 +75,15 @@ input[type="submit"] {
   color: #ffffff;
   cursor: pointer;
 }
+form p {
+  margin-bottom: 20px;
+}
 form a {
   color: white;
 }
-footer {
-  height: 50px;
-  background: #000000;
-  margin-top: 20px;
-  color: #ffffff;
-  text-align: center;
-  padding-top: 10px;
+.errors {
+  color: red;
+  background: rgb(118, 189, 255);
 }
 
 @media only screen and (max-width: 768px) {

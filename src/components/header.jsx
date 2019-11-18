@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "../css/sign-up.css";
+import "../css/header.css";
 
 class Header extends Component {
   state = {};
