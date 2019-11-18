@@ -11,28 +11,28 @@ const SignIn = () => {
     e.preventDefault();
     setState({ error: "" });
     const isUserExist = users.find(
-      user => user.email === e.target.children[1].value
+      user => user.email === e.target.children[2].value
     );
-    if (!isUserExist || isUserExist.password !== e.target.children[3].value) {
+    if (!isUserExist || isUserExist.password !== e.target.children[4].value) {
       setState({ error: "Invalid email or password." });
     } else {
-      localStorage.setItem("userEmail", `${e.target.children[1].value}`);
+      localStorage.setItem("userEmail", `${e.target.children[2].value}`);
       if (isUserExist.title === "Developer") {
-        window.location.href = "/lf-dashboard";
+        window.location.href = "/developer-dashboard";
       }
       if (isUserExist.title === "LF") {
-        window.location.href = "/developer-dashboard";
+        window.location.href = "/lf-dashboard";
       }
     }
   };
   return (
     <form onSubmit={inputValidator} action="/contact" method="POST">
+      <p className="errors">{state.error}</p>
       <label>Email address</label>
       <input type="text" />
       <label>Password</label>
       <input type="password" />
       <input type="submit" value="Sign in" />
-      <p className="errors">{state.error}</p>
       <p>
         <Link to="/resetpassword">
           <span>Forgot password?</span>

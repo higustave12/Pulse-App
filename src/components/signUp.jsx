@@ -11,11 +11,11 @@ const SignUp = () => {
     e.preventDefault();
     setState({ error: "" });
     const isUserExist = users.find(
-      user => user.email === e.target.children[1].value
+      user => user.email === e.target.children[2].value
     );
     if (
       !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-        e.target.children[1].value
+        e.target.children[2].value
       )
     ) {
       setState({ error: "Invalid email address." });
@@ -25,11 +25,11 @@ const SignUp = () => {
       setState({ error: "User already exist. instead, you can sign in." });
       return;
     }
-    if (e.target.children[3].value.length < 8) {
+    if (e.target.children[4].value.length < 8) {
       setState({ error: "Password must at least be 8 characheters." });
       return;
     }
-    if (e.target.children[3].value !== e.target.children[5].value) {
+    if (e.target.children[4].value !== e.target.children[6].value) {
       setState({ error: "Password don't match." });
       return;
     } else {
@@ -37,13 +37,13 @@ const SignUp = () => {
         userId: users.length + 1,
         firstName: "new",
         lastName: "user",
-        email: e.target.children[1].value,
-        password: e.target.children[5].value,
+        email: e.target.children[2].value,
+        password: e.target.children[6].value,
         title: "Developer",
         imgUrl: "assets/images/new-user.jpg"
       };
       users.push(newUser);
-      localStorage.setItem("userEmail", `${e.target.children[1].value}`);
+      localStorage.setItem("userEmail", `${e.target.children[2].value}`);
       if (newUser.title === "Developer") {
         window.location.href = "/lf-dashboard";
       }
@@ -54,6 +54,7 @@ const SignUp = () => {
   };
   return (
     <form onSubmit={inputValidator} action="/contact" method="POST">
+      <p className="errors">{state.error}</p>
       <label>Email address</label>
       <input type="text" />
       <label>Password</label>
@@ -65,7 +66,6 @@ const SignUp = () => {
         <input type="checkbox" value="LF" />
       </label>
       <input type="submit" value="Sign up" />
-      <p className="errors">{state.error}</p>
       <p>
         Have an account?
         <Link to="/signin">
