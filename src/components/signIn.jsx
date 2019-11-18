@@ -2,23 +2,26 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../css/sign-up-in.css";
 
-const SignUp = () => {
+const SignIn = () => {
   return (
     <form action="#">
       <label>Email address</label>
       <input type="text" />
       <label>Password</label>
       <input type="password" />
-      <label>Confirm password</label>
-      <input type="password" />
-      <input type="submit" value="Sign up" />
+      <input type="submit" value="Sign in" />
       <p>
-        Have an account?
-        <Link to="/signin">
-          <span>Sign in</span>
+        <Link to="/resetpassword">
+          <span>Forgot password?</span>
+        </Link>
+      </p>
+      <p>
+        Don't have an account?
+        <Link to="/">
+          <span>Sign up</span>
         </Link>
       </p>
     </form>
   );
 };
-export default SignUp;
+export default SignIn;

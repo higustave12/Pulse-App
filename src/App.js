@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import { Route } from 'react-router-dom';
-import SignUp from "./components/signUp";
+import { Route } from "react-router-dom";
+import Landing from "./components/landingPage";
 import Header from "./components/header";
 import Footer from "./components/footer";
-import Weekdetails from './components/Engineer/weekdetails';
+import Weekdetails from "./components/Engineer/weekdetails";
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Header />
-        <div className="content">
-          <Route exact path="/" component={SignUp} />
-          <Route exact path="/weekdetails" component={Weekdetails} />
-        </div>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/weekdetails" component={Weekdetails} />
+        <Route exact path="/signin" component={Landing} />
+        <Route exact path="/resetpassword" component={Landing} />
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }

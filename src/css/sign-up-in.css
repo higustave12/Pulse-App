@@ -9,22 +9,15 @@ body {
 body {
   font-size: 24px;
   font-family: Roboto;
+  background: url(../two-women-looking-at-the-code.jpg);
   background-position: center;
   background-size: cover;
 }
-
-header {
-  max-height: 99px;
-  background: rgba(26, 145, 255, 0.74);
-  padding-top: 10px;
-}
-header h1 {
-  font-family: Philosopher;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 72px;
-  color: #ffffff;
-  margin-left: 30px;
+#root {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: rgba(0, 0, 0, 0.66);
+  min-height: 100%;
 }
 section {
   display: grid;
@@ -43,15 +36,12 @@ section {
 }
 section form {
   max-width: 541px;
-  height: 499px;
+  height: 440px;
   background: rgba(26, 145, 255, 0.75);
   border-radius: 20px;
   padding: 20px;
   margin-top: 80px;
   margin-right: 10px;
-}
-.signUp {
-  background: url(../two-women-looking-at-the-code.jpg);
 }
 label {
   display: block;
@@ -61,13 +51,14 @@ label {
   color: #ffffff;
 }
 input {
-  width: 100%;
+  width: 97%;
   height: 50px;
   border: none;
   outline: none;
   border-radius: 10px;
   font-size: 20px;
   margin: 10px 0;
+  padding: 0 10px;
 }
 input[type="submit"] {
   margin: 30px 0;
@@ -79,16 +70,11 @@ input[type="submit"] {
   color: #ffffff;
   cursor: pointer;
 }
+form p {
+  margin-bottom: 20px;
+}
 form a {
   color: white;
-}
-footer {
-  height: 50px;
-  background: #000000;
-  margin-top: 20px;
-  color: #ffffff;
-  text-align: center;
-  padding-top: 10px;
 }
 
 @media only screen and (max-width: 768px) {
