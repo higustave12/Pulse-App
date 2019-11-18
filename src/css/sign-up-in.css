@@ -13,6 +13,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
 #root {
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -20,6 +21,19 @@ body {
   min-height: 100%;
 }
 .signUp {
+  max-height: 99px;
+  background: rgba(26, 145, 255, 0.74);
+  padding-top: 10px;
+}
+header h1 {
+  font-family: Philosopher;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 72px;
+  color: #ffffff;
+  margin-left: 30px;
+}
+section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
