@@ -17,14 +17,16 @@ const Landing = props => {
   }
   return (
     <React.Fragment>
-      <section className="signUp">
-        <p id="desc">
-          The framework <br /> for evaluating a person’s <br /> performance
-          based on the <br />
-          competency expectations for <br /> their current level
-        </p>
-        <Path />
-      </section>
+      <div className="cntnr">
+        <section className="signUp">
+          <p id="desc">
+            The framework <br /> for evaluating a person’s <br /> performance
+            based on the <br />
+            competency expectations for <br /> their current level
+          </p>
+          <Path />
+        </section>
+      </div>
     </React.Fragment>
   );
 };
