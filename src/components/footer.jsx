@@ -7,7 +7,7 @@ class Footer extends Component {
     return (
       <React.Fragment>
         <footer>
-          <div>copy right © 2019 Pulse - Andela</div>
+          <div>Copyright © 2019 Pulse - Andela</div>
         </footer>
       </React.Fragment>
     );

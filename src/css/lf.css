@@ -1,0 +1,188 @@
+/*----------------- LF WEEKLY CSS ---------- */
+.tabletitle {
+  color: #FFF;
+  padding: 5px 10px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  background-color: #1A91FF;
+  border-bottom: solid 2px rgb(80, 167, 248);
+}
+
+.tabletitle h1 {
+  flex-grow: 1;
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.scoreboard {
+  background: #fff;
+  width: 900px;
+  margin: 70px auto;
+  box-shadow: 0 2px 0 #1A91FF;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-top: -55px;;
+}
+.mentee-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  width: 900px;
+  margin: 70px auto;
+  box-shadow: 0 4px 0 #1A91FF;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 200px;
+  
+}
+.dev-profile {
+  display: flex;
+  height: 90%;
+  align-items: center;
+  margin: 5px;
+  
+}
+.dev-picture img{
+  width:170px;
+  border: 1px solid;
+  border-radius: 50%;
+  height: 170px;
+  position: relative;
+  border: none;
+}
+.btnHolder {
+  width: 900px;
+  margin: 70px auto;
+  margin-top: -55px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.btn {
+  width: 120px;
+  height: 60px;
+  border:1px;
+  border-radius: 10px;
+  margin-right: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 25px;
+}
+.submit {
+  width: 200px;
+}
+.btn:hover {
+  background: #1A91FF;
+  cursor: pointer;
+}
+.gold {
+  background: goldenrod;
+}
+.green {
+  background: darkgreen;
+}
+.yellowgreen {
+  background: yellowgreen;
+}
+.dev-details {
+  padding-left: 10px;
+}
+.dev-names {
+  font-weight: bolder;
+  font-size: 22px;
+  text-transform: capitalize;
+}
+.dev-position {
+  font-weight: 500;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.week-details {
+  display: flex;
+  height: 90%;
+  width: 50%;
+  align-items: center;
+  /* justify-items: center; */
+  background: #E5E5E5;
+  border-radius: 20px;
+  border:solid black 1px;
+  border: none;
+}
+.week-texts {
+  padding-left: 20px
+}
+
+.week {
+  display: flex;
+  font-size: 1.2em;
+  border-bottom: solid 2px #EEEEEE;
+  letter-spacing: 2px;
+  height: 60px;
+}
+  
+.week:last-of-type {
+  border-bottom-color: #D4CAFF;
+}
+
+.score-type {
+  flex-grow: 1;
+  line-height: 3.5em;
+  padding-left: 10px;
+  width: 5%;
+  text-transform: uppercase;
+  background: #E39B58;
+}
+
+.counter {
+display: flex;
+width: 20%;
+}
+
+.counter-action {
+  border: none;
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #B0AEBA;
+  background-color: #DCDCDC;
+  display: block;
+  padding: 20px 20px;
+  cursor: pointer;
+  outline: none;
+}
+
+.counter-action:hover {
+  color: #fff;
+}
+
+.increment:hover {
+  background: #83D97C;
+}
+
+.decrement:hover {
+  background: #EF5350;
+}
+
+.counter-score {
+  flex-grow: 1;
+  text-align: center;
+  font-family: monospace;
+  font-size: 2em;
+  line-height: 2em;
+}
+
+.comments {
+  flex-grow: 1;
+  display: flex;
+}
+.comment-text {
+  flex-grow: 1;
+  text-align: left;
+  font-family: monospace;
+  font-size: 16px;
+  line-height: 2em;
+  width: 95%;
+  padding: 2%;
+  border: 1px solid #1A91FF;
+}
+
+/*------------------------------------*/
