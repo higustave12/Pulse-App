@@ -11,9 +11,9 @@ class App extends Component {
       <React.Fragment>
         <Header />
         <Route exact path="/" component={Landing} />
-        <Route exact path="/developer-dashboard" component={Devdashbard} />
-        <Route exact path="/signin" component={Landing} />
-        <Route exact path="/resetpassword" component={Landing} />
+        <Route path="/developer-dashboard" component={Devdashbard} />
+        <Route path="/signin" component={Landing} />
+        <Route path="/resetpassword" component={Landing} />
         <Footer />
       </React.Fragment>
     );
