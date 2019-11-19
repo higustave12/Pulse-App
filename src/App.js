@@ -4,7 +4,6 @@ import Landing from "./components/landingPage";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Devdashbard from "./components/developer/devdashbard";
-import devdashbard from './components/Engineer/devdashbard';
 
 class App extends Component {
   render() {
@@ -15,10 +14,6 @@ class App extends Component {
         <Route exact path="/developer-dashboard" component={Devdashbard} />
         <Route exact path="/signin" component={Landing} />
         <Route exact path="/resetpassword" component={Landing} />
-        <div className="content">
-          <Route exact path="/" component={SignUp} />
-          <Route exact path="/devdashbard" component={devdashbard} />
-        </div>
         <Footer />
       </React.Fragment>
     );

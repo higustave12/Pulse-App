@@ -15,13 +15,11 @@ body {
   background-size: cover;
 }
 
-#root {
+.signUp {
+  height: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100%;
-}
-.signUp {
-  height: 100%;
 }
 section {
   display: grid;
