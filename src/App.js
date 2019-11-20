@@ -5,6 +5,7 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Devdashbard from "./components/developer/devdashbard";
 import LFADashboard from './components/LFADashboard';
+import LFWeekly from './components/lf/addscore';
 
 class App extends Component {
   render() {
