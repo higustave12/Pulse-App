@@ -197,3 +197,49 @@ export const weeks = [
     }
   }
 ];
+
+export const categories = [
+  {
+    name: 'QUALITY',
+    id: 1
+  },
+  {
+    name: 'QUANTITY',
+    id: 2
+  },
+  {
+    name: 'INITITATIVE',
+    id: 3
+  },
+  {
+    name: 'COMMUNICATION',
+    id: 4
+  },
+  {
+    name: 'PROFESSIONALISM',
+    id: 5
+  },
+  {
+    name: 'INTEGRATION',
+    id: 6
+  }
+];
+export const buttons = [
+  {
+    buttonText: 'Submit',
+    className: 'btn green submit',
+    id: 2
+  },
+  {
+    buttonText: 'Previous',
+    className: 'btn yellowgreen',
+    btnFunction: 'previousUser',
+    id: 1
+  },
+  {
+    buttonText: 'Next',
+    className: 'btn gold',
+    btnFunction: 'nextUser',
+    id: 3
+  }
+];
