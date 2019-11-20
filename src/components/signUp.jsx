@@ -14,6 +14,7 @@ const SignUp = () => {
       user => user.email === e.target.children[2].value
     );
     if (
+      // eslint-disable-next-line
       !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
         e.target.children[2].value
       )

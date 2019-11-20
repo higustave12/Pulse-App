@@ -1,0 +1,91 @@
+
+#signout_span{
+  float: right;
+  padding: 10px 5px 20px 5px;
+  background-color: orange;
+}
+.user_signedin_div {
+  margin-top: -40px;
+}
+.user_btn{
+  padding: 5px 10px;
+  margin-bottom: 40px;
+  color: #000;
+  border-radius: 5px;
+}
+.user_btn:hover{
+  color: orange
+}
+
+
+/* Float five columns side by side */
+.column {
+  float: left;
+  width: 19.9%;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  background-color: silver;
+}
+.card_contents{
+  padding-left: 10px;
+}
+.allmonths_average{
+  font-size: 20px;
+  font-weight: bold;
+  color: green;
+}
+.average_main_span{
+  padding-left: 20px;
+}
+.footer{
+  background-color: #4D4E52;
+}
+.footer small{
+  font-size: 14px;
+}
+.progress{
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.input-group{
+  margin: auto;
+  width: 500px;
+  
+}
+.pulse-dropdown:first-child{
+  background:none;
+  color: #000;
+  display: flex;
+}
+.w3-dark-grey{
+  font-size: 14px;
+}
+.eng_img_and_role{
+  font-size: 14px;
+}
