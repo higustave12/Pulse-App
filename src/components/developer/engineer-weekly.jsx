@@ -2,6 +2,7 @@ import React from 'react';
 import '../../css/lf.css';
 import { categories } from '../../assets/DB/database';
 import Info from '../lf/DevInformation';
+import { users } from '../../assets/DB/database';
 
 const Score = props => {
   return (
@@ -36,10 +37,14 @@ class Scored extends React.Component {
   }
 
 class EngineerWeekly extends React.Component {
+  constructor() {
+    super();
+    this.state = { currentUserIndex: 0 };
+  }
   render() {
     return (
       <div>
-        <Info />
+        <Info userIndex={users[this.state.currentUserIndex]} />
         <div className='scoreboard'>
           {/* Categories List */}
           {categories.map(category => (
