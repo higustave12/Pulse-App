@@ -4,6 +4,7 @@ import Button from './button';
 const BtnHolder = props => {
   return (
     <div className='btnHolder'>
+      <Button buttonText={'Submit'} className={'btn green submit'} key={3} />
       <Button
         buttonText={'Next'}
         className={'btn gold'}
@@ -16,7 +17,6 @@ const BtnHolder = props => {
         key={2}
         onClick={() => props.carouselUser(-1)}
       />
-      <Button buttonText={'Submit'} className={'btn green submit'} key={3} />
     </div>
   );
 };

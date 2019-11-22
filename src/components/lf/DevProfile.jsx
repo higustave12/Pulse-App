@@ -1,18 +1,17 @@
 import React from 'react';
-import image from '../../css/victor.jpg';
 
 const Devprofile = props => {
   return (
     <div className='dev-profile'>
       <div className='dev-picture'>
-        <img src={image} alt='Avatar'></img>
+        <img src={props.userData.imgUrl} alt='Avatar'></img>
       </div>
       <div className='dev-details'>
         <span className='dev-names'>
-          {props.firstName} {props.lastName}
+          {props.userData.firstName} {props.userData.lastName}
         </span>{' '}
         <br></br>
-        <span className='dev-position'>{props.position}</span>
+        <span className='dev-position'>{props.userData.title}</span>
       </div>
     </div>
   );

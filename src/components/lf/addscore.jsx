@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
 import '../../css/lf.css';
 import { categories } from '../../assets/DB/database';
-import Counter from './Counter';
-import Comments from './Comments';
 import BtnHolder from './BtnHolder';
 import Info from './DevInformation';
 import { users } from '../../assets/DB/database';
-
-const Score = props => {
-  return (
-    <div className='week'>
-      <span className='score-type'>{props.name}</span>
-      <Counter />
-      <Comments />
-    </div>
-  );
-};
+import Score from './Rank';
 
 class LFWeekly extends Component {
   constructor() {

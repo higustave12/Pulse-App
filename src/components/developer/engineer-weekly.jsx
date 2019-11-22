@@ -1,40 +1,21 @@
 import React from 'react';
-import '../../css/lf.css';
-import { categories } from '../../assets/DB/database';
+import { users, weeks } from '../../assets/DB/database';
 import Info from '../lf/DevInformation';
-import { users } from '../../assets/DB/database';
+import RankingBase from './RankingBase';
 
-const Score = props => {
-  return (
-    <div className='week'>
-      <span className='score-type'>{props.name}</span>
-      <Scored />
-      <YourComments />
-    </div>
-  );
-};
+const weekId = 1;
+const userDetails = users.find(
+  e => e.email === localStorage.getItem('userEmail')
+);
+const getWeeklyData = weeks.filter(
+  w => w.week === weekId && w.userId === userDetails.userId
+);
+const attributes = Object.keys(getWeeklyData[0]);
+const values = Object.values(getWeeklyData[0]);
+//splice the first three non needed items... (user id, and week details)
 
-const YourComments = () => {
-    return (
-      <div className='comments'>
-        <textarea
-          className='comment-text'
-          readOnly value={'value'}
-        />
-      </div>
-      
-    );
-  };
-
-class Scored extends React.Component {
-    render() {
-      return (
-        <div className='counter'>
-          <span className='counter-score'>2</span>
-        </div>
-      );
-    }
-  }
+attributes.splice(0, 3);
+values.splice(0, 3);
 
 class EngineerWeekly extends React.Component {
   constructor() {
@@ -44,11 +25,14 @@ class EngineerWeekly extends React.Component {
   render() {
     return (
       <div>
-        <Info userIndex={users[this.state.currentUserIndex]} />
+        <Info
+          userIndex={userDetails}
+          weekId={getWeeklyData[0].week}
+          weekName={getWeeklyData[0].weekName}
+        />
         <div className='scoreboard'>
-          {/* Categories List */}
-          {categories.map(category => (
-            <Score name={category.name} key={category.id.toString()} />
+          {attributes.map((attribute, index) => (
+            <RankingBase key={index} attribute={attribute} value={values[index]} />
           ))}
         </div>
       </div>
