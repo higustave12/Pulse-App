@@ -5,6 +5,7 @@ import { users } from "../assets/DB/database";
 
 const SignIn = () => {
   const [state, setState] = useState({
+    user : {},
     error: ""
   });
   const inputValidator = e => {
