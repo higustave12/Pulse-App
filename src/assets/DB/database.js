@@ -2279,22 +2279,3 @@ export const categories = [
     id: 6
   }
 ];
-export const buttons = [
-  {
-    buttonText: 'Submit',
-    className: 'btn green submit',
-    id: 2
-  },
-  {
-    buttonText: 'Previous',
-    className: 'btn yellowgreen',
-    btnFunction: 'previousUser',
-    id: 1
-  },
-  {
-    buttonText: 'Next',
-    className: 'btn gold',
-    btnFunction: 'nextUser',
-    id: 3
-  }
-];
