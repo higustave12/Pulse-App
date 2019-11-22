@@ -8,7 +8,7 @@ class Header extends Component {
     return (
       <React.Fragment>
         <header>
-          <h1>Pulse</h1>
+          <h1>Pulse-Andela</h1>
           <NavBar/>
         </header>
       </React.Fragment>

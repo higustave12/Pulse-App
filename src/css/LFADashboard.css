@@ -21,9 +21,9 @@
 /* Float five columns side by side */
 .column {
   float: left;
-  width: 19.9%;
-  padding: 0 10px;
-  margin-bottom: 20px;
+  width: 20%;
+  padding: 10px 5px;
+  margin-bottom: 0px;
 }
 
 /* Remove extra left and right margins, due to padding */
@@ -88,4 +88,18 @@
 }
 .eng_img_and_role{
   font-size: 14px;
+}
+.cohorts-list{
+  font-size: 15px;
+  border: 1px solid rgb(202, 199, 199);
+  background-color: aliceblue;
+}
+.cohorts-list li:hover{
+  cursor: pointer;
+}
+.average_value{
+  font-size: 15px;
+}
+.all_engineers_list_div{
+  padding-bottom: 60px;
 }
