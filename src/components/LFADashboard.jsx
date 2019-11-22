@@ -6,12 +6,9 @@ class LFADashboard extends Component {
     render() {
         return (
           <Fragment>
-            <div className="w3-row-padding engineers_dashboard_div">
-              <div className="w3-col s12" style={{paddingBottom:'10px'}}>
-                <hr style={{marginBottom: '40px'}} />
+              <div>
                 <EngineersList/>
               </div>
-            </div>
           </Fragment>
         );
     }
