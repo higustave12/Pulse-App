@@ -23,7 +23,7 @@ class LFWeekly extends Component {
     this.state = { currentUserIndex: 0 };
   }
   carouselUser = indexTo => {
-    const lastIndex = users.length + indexTo;
+    const lastIndex = users.length - 1;
     const { currentUserIndex } = this.state;
     if (indexTo === -1) {
       const shouldResetIndex = currentUserIndex === 0;
