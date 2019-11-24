@@ -21,6 +21,7 @@ const EngineerCard = props => {
             style={{ width: "52px", height: "55px" }}
           />
           <p>{props.userRole}</p>
+          <p>&#9658; Cohort: {props.devCohort}</p>
         </div>
         <span className="average_main_span">
           <span className="allmonths_average">Average:</span>
@@ -48,6 +49,38 @@ const EngineerCard = props => {
     </div>
   );
 };
+
+const CohortsList = () => {
+  const handleCohortClicked = () => {};
+
+  let allCohorts = [];
+  for (let i = 0; i < users.length; i++) {
+    allCohorts.push(users[i].cohort);
+  }
+  //Use a Set data type to remove redundancy
+  let uniqueCohortsValues = [...new Set(allCohorts)];
+  //console.log(uniqueCohortsValues);
+  const numberOfCohorts = [];
+  for (let j = 0; j < uniqueCohortsValues.length; j++) {
+    numberOfCohorts.push(uniqueCohortsValues[j]);
+  }
+  return (
+    <ul className="w3-ul w3-hoverable cohorts-list">
+      {numberOfCohorts
+        .sort((a, b) => {
+          return a - b;
+        })
+        .map((singleCohort, index) => {
+          return (
+            <li key={index} onClick={handleCohortClicked()}>
+              Cohort-{singleCohort}
+            </li>
+          );
+        })}
+    </ul>
+  );
+};
+
 class EngineersList extends Component {
   render() {
     return (
@@ -58,11 +91,39 @@ class EngineersList extends Component {
             style={{ width: "20%", textAlign: "center", marginTop: "30px" }}
           >
             <span>
-            <span class="glyphicon glyphicon-ok-circle" style={{paddingRight:'5px', fontSize: '15px', color:'#FF7133'}} ></span>
-              <span style={{fontSize:'16px',fontWeight:'bold', color:'#848589'}} >LF:</span>
-                <span style={{paddingLeft: '5px', fontSize:'15px', textDecoration:'underline', fontWeight:'bold',color:'#848589'}} >Bernard</span>
+              <span
+                style={{
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  color: "#848589"
+                }}
+              >
+                <span
+                  className="glyphicon glyphicon-user"
+                  style={{
+                    paddingRight: "2px",
+                    border: "2px solid #878787",
+                    padding: "5px",
+                    borderRadius: "90px"
+                  }}
+                ></span>
+              </span>
+              <span
+                style={{
+                  paddingLeft: "5px",
+                  fontSize: "12px",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                  color: "#000000"
+                }}
+              >
+                {localStorage.getItem("userEmail")}
+              </span>
             </span>
-            <br/><br/><br/><br/>
+            <br />
+            <br />
+            <br />
+            <br />
             <h5
               style={{
                 backgroundColor: "#6ECB56",
@@ -73,20 +134,8 @@ class EngineersList extends Component {
             >
               Available Cohorts
             </h5>
-            <ul class="w3-ul w3-hoverable cohorts-list">
-              <li>Cohort-1</li>
-              <li>Cohort-2</li>
-              <li>Cohort-3</li>
-              <li>Cohort-4</li>
-              <li>Cohort-5</li>
-              <li>Cohort-6</li>
-              <li>Cohort-7</li>
-              <li>Cohort-8</li>
-              <li>Cohort-9</li>
-              <li>Cohort-10</li>
-              <li>Cohort-11</li>
-              <li>Cohort-12</li>
-            </ul>
+
+            <CohortsList />
           </div>
           <div
             className="w3-col  w3-container"
@@ -122,18 +171,30 @@ class EngineersList extends Component {
                   backgroundColor: "#E59406",
                   color: "#fff",
                   fontWeight: "bold",
-                  borderRadius:'0px 10px 10px 0px'
+                  borderRadius: "0px 10px 10px 0px"
                 }}
               >
                 search
               </button>
             </p>
+            
+            <button
+              type="button"
+              style={{
+                padding: "10px 20px",
+                fontSize: "15px",
+                backgroundColor: "rgba(26, 145, 255)",
+                color: "#fff"
+              }}
+            >
+              Rate Cohort
+            </button>
             <hr />
             {users.map(user => {
               //Engineer all weeks average
               let average = 0;
               const calcAverage = id => {
-                const usersAllWeeks = weeks.filter(week => week.userId === id);
+                const usersAllWeeks = weeks.filter(week => (week.userId === id));
                 for (let i = 0; i < usersAllWeeks.length; i++) {
                   const totalScore =
                     usersAllWeeks[i].Quantity.score +
@@ -147,29 +208,14 @@ class EngineersList extends Component {
                 return average / usersAllWeeks.length;
               };
               const userAverage = calcAverage(user.userId);
-
-              //Dynamic progress bar
-              let bootstrapClass = "";
-              const colorClass = userAverage => {
-                if (userAverage >= 6.4) {
-                  bootstrapClass = "progress-bar progress-bar-success";
-                } else if (userAverage < 6.4 && userAverage >= 5.0) {
-                  bootstrapClass = "progress-bar progress-bar-warning";
-                } else {
-                  bootstrapClass = "progress-bar progress-bar-danger";
-                }
-                return bootstrapClass;
-              };
-              const currentClassColor = colorClass(userAverage);
-
               return (
                 <EngineerCard
                   key={user.userId}
                   userName={user.firstName}
                   imgSrc={user.imgUrl}
                   userRole={user.title}
+                  devCohort={user.cohort}
                   engineerAverage={userAverage}
-                  colorClassValue={currentClassColor}
                 />
               );
             })}
