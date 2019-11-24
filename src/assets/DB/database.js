@@ -6,6 +6,7 @@ export const users = [
     email: "gad@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 1,
     imgUrl: "../assets/images/shema.jpg"
   },
   {
@@ -15,6 +16,7 @@ export const users = [
     email: "john@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 2,
     imgUrl: "../assets/images/john.jpg"
   },
   {
@@ -24,6 +26,7 @@ export const users = [
     email: "vicky@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 3,
     imgUrl: "../assets/images/victor.jpg"
   },
   {
@@ -33,6 +36,7 @@ export const users = [
     email: "vicky@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 4,
     imgUrl: "../assets/images/gustave.jpg"
   },
   {
@@ -42,15 +46,17 @@ export const users = [
     email: "eric@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 5,
     imgUrl: "../assets/images/eric.jpg"
   },
   {
     userId: 6,
     firstName: "Jordan",
     lastName: "Dushimimana",
-    email: "bernard@pulse.com",
+    email: "jordan@pulse.com",
     password: "123456",
     title: "LF",
+    cohort: 6,
     imgUrl: "../assets/images/jordan.jpg"
   },
   {
@@ -60,6 +66,7 @@ export const users = [
     email: "gad@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 7,
     imgUrl: "../assets/images/gad.jpg"
   },
   {
@@ -69,6 +76,7 @@ export const users = [
     email: "john@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 8,
     imgUrl: "../assets/images/aline.jpg"
   },
   {
@@ -78,6 +86,7 @@ export const users = [
     email: "vicky@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 9,
     imgUrl: "../assets/images/benit.jpg"
   },
   {
@@ -87,6 +96,7 @@ export const users = [
     email: "vicky@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 11,
     imgUrl: "../assets/images/brigitte.jpg"
   },
   {
@@ -96,6 +106,7 @@ export const users = [
     email: "eric@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 11,
     imgUrl: "../assets/images/silver.jpg"
   },
   {
@@ -105,6 +116,7 @@ export const users = [
     email: "bernard@pulse.com",
     password: "123456",
     title: "LF",
+    cohort: 10,
     imgUrl: "../assets/images/robert.jpg"
   },
   {
@@ -114,6 +126,7 @@ export const users = [
     email: "gad@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 12,
     imgUrl: "../assets/images/daniel.jpg"
   },
   {
@@ -123,6 +136,7 @@ export const users = [
     email: "john@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 10,
     imgUrl: "../assets/images/virgile.jpg"
   },
   {
@@ -132,6 +146,7 @@ export const users = [
     email: "vicky@pulse.com",
     password: "123456",
     title: "Developer",
+    cohort: 12,
     imgUrl: "../assets/images/natasha.jpg"
   }
 ]
