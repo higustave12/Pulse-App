@@ -6,7 +6,7 @@ import ResetPassword from "./resetPassword";
 
 const Landing = props => {
   let Path;
-  if (props.match.path === "/") {
+  if (props.match.path === "/signup") {
     Path = SignUp;
   }
   if (props.match.path === "/signin") {

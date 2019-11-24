@@ -2,6 +2,7 @@ import React, { Fragment, Component } from "react";
 import "../css/LFADashboard.css";
 import { Link } from "react-router-dom";
 import { users, weeks } from "../assets/DB/database";
+import Suggestions from "./suggestions";
 
 const EngineerCard = props => {
   return (
@@ -146,38 +147,52 @@ class EngineersList extends Component {
               padding: "0px"
             }}
           >
-            <p className="searchBarClass">
-              <input
-                type="text"
-                placeholder="Search for a developer..."
-                style={{
-                  backgroundColor: "white",
-                  width: "450px",
-                  height: "51px",
-                  marginTop: "20px",
-                  fontSize: "18px",
-                  borderTopRightRadius: "0px",
-                  borderBottomRightRadius: "0px",
-                  border: "1px solid #838282"
-                }}
-              />
-              <button
-                type="submit"
-                style={{
-                  fontSize: "18px",
-                  paddingLeft: "15px",
-                  paddingRight: "15px",
-                  height: "52px",
-                  backgroundColor: "#E59406",
-                  color: "#fff",
-                  fontWeight: "bold",
-                  borderRadius: "0px 10px 10px 0px"
-                }}
-              >
-                search
-              </button>
-            </p>
-            
+            <form
+              className="searchBarClass"
+              onSubmit={this.props.search}
+              style={{ display: "inline" }}
+            >
+              <div id="search-input-container">
+                <input
+                  type="text"
+                  placeholder="Search for a developer..."
+                  style={{
+                    backgroundColor: "white",
+                    width: "450px",
+                    height: "51px",
+                    fontSize: "18px",
+                    borderRadius: "0"
+                  }}
+                  onChange={this.props.suggest}
+                  onFocus={this.props.suggest}
+                  // onBlur={this.props.reset}
+                  value={this.props.value}
+                />
+                <input
+                  type="submit"
+                  style={{
+                    fontSize: "18px",
+                    paddingLeft: "15px",
+                    paddingRight: "15px",
+                    height: "52px",
+                    backgroundColor: "#E59406",
+                    color: "#fff",
+                    fontWeight: "bold",
+                    width: "100px",
+                    borderRadius: "0"
+                  }}
+                  value="Search"
+                />
+                <div id="suggestions">
+                  <Suggestions
+                    users={this.props.users}
+                    suggestions={this.props.suggestions}
+                    search={this.props.search}
+                    updateSearch={this.props.updateSearch}
+                  />
+                </div>
+              </div>
+            </form>
             <button
               type="button"
               style={{
@@ -190,11 +205,11 @@ class EngineersList extends Component {
               Rate Cohort
             </button>
             <hr />
-            {users.map(user => {
+            {this.props.users.map(user => {
               //Engineer all weeks average
               let average = 0;
               const calcAverage = id => {
-                const usersAllWeeks = weeks.filter(week => (week.userId === id));
+                const usersAllWeeks = weeks.filter(week => week.userId === id);
                 for (let i = 0; i < usersAllWeeks.length; i++) {
                   const totalScore =
                     usersAllWeeks[i].Quantity.score +

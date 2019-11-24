@@ -1,19 +1,20 @@
-import React, { Component } from "react";
+import React from "react";
 import "../css/header.css";
-import NavBar from '../components/NavBar';
+import NavBar from "../components/NavBar";
 
-class Header extends Component {
-  state = {};
-  render() {
-    return (
-      <React.Fragment>
-        <header>
-          <h1>Pulse-Andela</h1>
-          <NavBar/>
-        </header>
-      </React.Fragment>
-    );
-  }
-}
+const Header = () => {
+  return (
+    <React.Fragment>
+      <header>
+        <h1>Pulse-Andela</h1>
+        {window.location.pathname !== "/signup" &&
+        window.location.pathname !== "/signin" &&
+        window.location.pathname !== "/" ? (
+          <NavBar />
+        ) : null}
+      </header>
+    </React.Fragment>
+  );
+};
 
 export default Header;
