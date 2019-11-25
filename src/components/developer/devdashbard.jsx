@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Average from './average';
 import Thead from './thead';
+import Tbody from './tbody';
 import { weeks, users } from '../../assets/DB/database';
-//import signin from '../signIn';
 import 'bootstrap/dist/css/bootstrap.css'
 
 
@@ -15,6 +15,9 @@ class Devdashbard extends Component{
   }
 
   render(){
+    const style = {
+      fontSize: '1.2em'
+    }
     return <React.Fragment>
             <div className="container">
               <div className="row">
@@ -22,7 +25,7 @@ class Devdashbard extends Component{
                   <p className="display-4">Average</p>
                 </div>
                 <div className="col-md-2">
-                  <p className="display-5 font-weight-bold">{this.state.user.firstName} {this.state.user.lastName}</p>
+                  <p style={style}>{this.state.user.firstName} {this.state.user.lastName}</p>
                 </div>
               </div>
                 <Average />
@@ -34,19 +37,8 @@ class Devdashbard extends Component{
                 </thead>
                 <tbody>
 
-                  {/* {weeks.map((week, index)=>{
+                  {findweek.map((week, index)=>{
                     return <Tbody key={index} week={week}/>;
-                  })} */}
-                  {findweek.map((find, index) => {
-                    return <tr key={index}>
-                      <td className="bg-info text-white">Week {index + 1}</td>
-                      <td>{find.Quality.score}</td>
-                      <td>{find.Quantity.score}</td>
-                      <td>{find.initiative.score}</td>
-                      <td>{find.Communication.score}</td>
-                      <td>{find.Professionalism.score}</td>
-                      <td>{find.Integration.score}</td>
-                    </tr>
                   })}
                 </tbody>
               </table>
