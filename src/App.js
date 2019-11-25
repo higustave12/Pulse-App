@@ -22,7 +22,7 @@ class App extends Component {
         <Route exact path="/resetpassword" component={Landing} />
         <Route exact path="/add-score" component={LFWeekly} />
         <Route exact path="/lf-dashboard" component={LFADashboard} />
-        <Route exact path="/engineer-weekly" component={EngineerWeekly} />
+        <Route exact path="/engineer-weekly/:week" component={EngineerWeekly} />
         <Footer />
       </React.Fragment>
     );
