@@ -54,7 +54,7 @@ const SignUp = () => {
     }
   };
   return (
-    <form onSubmit={inputValidator} action="/contact" method="POST">
+    <form onSubmit={inputValidator} method="POST">
       <p className="errors">{state.error}</p>
       <label>Email address</label>
       <input type="text" />
