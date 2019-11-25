@@ -1,3 +1,4 @@
+
 import React, { Component, Fragment } from "react";
 import "../css/LFADashboard.css";
 import EngineersList from "./EngineersListCards";
@@ -5,7 +6,7 @@ import { users } from "../assets/DB/database";
 
 class LFADashboard extends Component {
   state = {
-    users: users,
+    users: [],
     suggestions: [],
     inputValue: ""
   };
@@ -27,7 +28,19 @@ class LFADashboard extends Component {
     if (event.target.value === "") {
       this.resetSuggestions(event);
     }
-  };
+  }
+  cohortHandler = event => {
+    let cohortNumber;
+    if(event.target.tagName === 'SPAN'){
+      cohortNumber = Number(event.target.innerHTML);
+    }else{
+      cohortNumber = Number(event.target.children[0].innerHTML);
+    }
+    
+    const cohortMembers = users.filter(user => user.cohort === cohortNumber);
+    this.setState({users:[...cohortMembers]})
+    
+  }
   searchHandler = event => {
     const searchResult = this.dataSearcher(event);
     this.setState({ users: [...searchResult] });
@@ -70,6 +83,7 @@ class LFADashboard extends Component {
             reset={this.resetSuggestions}
             updateSearch={this.updateSearchInput}
             value={this.state.inputValue}
+            cohortHandler={this.cohortHandler}
           />
         </div>
       </Fragment>

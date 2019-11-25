@@ -1,86 +1,9 @@
 import React, { Fragment, Component } from "react";
+import EngineerCard from "./engineerCard";
+import CohortsList from "./cohortsLists";
+import { weeks } from "../assets/DB/database";
 import "../css/LFADashboard.css";
-import { Link } from "react-router-dom";
-import { users, weeks } from "../assets/DB/database";
 import Suggestions from "./suggestions";
-
-const EngineerCard = props => {
-  return (
-    <div className="column">
-      <div className="w3-card">
-        <header
-          className="w3-container w3-light-grey"
-          style={{ textAlign: "left", padding: "5px 15px" }}
-        >
-          <h3>{props.userName}</h3>
-        </header>
-        <div className="w3-container eng_img_and_role">
-          <img
-            src={props.imgSrc}
-            alt="avatar"
-            className="w3-left w3-circle w3-margin-right"
-            style={{ width: "52px", height: "55px" }}
-          />
-          <p>{props.userRole}</p>
-          <p>&#9658; Cohort: {props.devCohort}</p>
-        </div>
-        <span className="average_main_span">
-          <span className="allmonths_average">Average:</span>
-          <span className="average_value">{props.engineerAverage}</span>
-        </span>
-        <div className="progress">
-          <div
-            className="progress-bar bg-success "
-            role="progressbar"
-            aria-valuenow={props.engineerAverage * 10}
-            aria-valuemin="0"
-            aria-valuemax="100"
-            style={{ width: `${props.engineerAverage * 10}%` }}
-          >
-            {props.engineerAverage * 10}%
-          </div>
-        </div>
-        <hr />
-        <Link to="/developer-dashboard">
-          <button className="w3-button w3-block w3-dark-grey">
-            View Details
-          </button>
-        </Link>
-      </div>
-    </div>
-  );
-};
-
-const CohortsList = () => {
-  const handleCohortClicked = () => {};
-
-  let allCohorts = [];
-  for (let i = 0; i < users.length; i++) {
-    allCohorts.push(users[i].cohort);
-  }
-  //Use a Set data type to remove redundancy
-  let uniqueCohortsValues = [...new Set(allCohorts)];
-  //console.log(uniqueCohortsValues);
-  const numberOfCohorts = [];
-  for (let j = 0; j < uniqueCohortsValues.length; j++) {
-    numberOfCohorts.push(uniqueCohortsValues[j]);
-  }
-  return (
-    <ul className="w3-ul w3-hoverable cohorts-list">
-      {numberOfCohorts
-        .sort((a, b) => {
-          return a - b;
-        })
-        .map((singleCohort, index) => {
-          return (
-            <li key={index} onClick={handleCohortClicked()}>
-              Cohort-{singleCohort}
-            </li>
-          );
-        })}
-    </ul>
-  );
-};
 
 class EngineersList extends Component {
   render() {
@@ -135,8 +58,7 @@ class EngineersList extends Component {
             >
               Available Cohorts
             </h5>
-
-            <CohortsList />
+            <CohortsList cohortHandler={this.props.cohortHandler} />
           </div>
           <div
             className="w3-col  w3-container"
@@ -231,6 +153,7 @@ class EngineersList extends Component {
                   userRole={user.title}
                   devCohort={user.cohort}
                   engineerAverage={userAverage}
+                  engineerId={user.userId}
                 />
               );
             })}
