@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import "../css/sign-up-in.css";
 import { users } from "../assets/DB/database";
+import * as actionTypes from "../store/actions";
 
-const SignUp = () => {
-  const [state, setState] = useState({
-    error: ""
-  });
+const SignUp = props => {
+  // const [state, setState] = useState({
+  //   error: ""
+  // });
   const inputValidator = e => {
     e.preventDefault();
-    setState({ error: "" });
+    // setState({ error: "" });
+    props.onInputValidator("");
     const isUserExist = users.find(
       user => user.email === e.target.children[2].value
     );
@@ -19,19 +22,23 @@ const SignUp = () => {
         e.target.children[2].value
       )
     ) {
-      setState({ error: "Invalid email address." });
+      // setState({ error: "Invalid email address." });
+      props.onInputValidator("Invalid email address.");
       return;
     }
     if (isUserExist) {
-      setState({ error: "User already exist. instead, you can sign in." });
+      // setState({ error: "User already exist. instead, you can sign in." });
+      props.onInputValidator("User already exist. instead, you can sign in.");
       return;
     }
     if (e.target.children[4].value.length < 8) {
-      setState({ error: "Password must at least be 8 characheters." });
+      // setState({ error: "Password must at least be 8 characheters." });
+      props.onInputValidator("Password must at least be 8 characheters.");
       return;
     }
     if (e.target.children[4].value !== e.target.children[6].value) {
-      setState({ error: "Password don't match." });
+      // setState({ error: "Password don't match." });
+      props.onInputValidator("Password don't match.");
       return;
     } else {
       const newUser = {
@@ -55,7 +62,7 @@ const SignUp = () => {
   };
   return (
     <form onSubmit={inputValidator} method="POST">
-      <p className="errors">{state.error}</p>
+      <p className="errors">{props.error}</p>
       <label>Email address</label>
       <input type="text" />
       <label>Password</label>
@@ -76,4 +83,18 @@ const SignUp = () => {
     </form>
   );
 };
-export default SignUp;
+
+const mapStateToProps = state => {
+  return {
+    error: state.error
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onInputValidator: errors =>
+      dispatch({ type: actionTypes.VALIDATE, error: errors })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
