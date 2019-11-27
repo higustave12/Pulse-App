@@ -1,21 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
 import "../css/sign-up-in.css";
 import { users } from "../assets/DB/database";
+import * as actionTypes from "../store/actions";
 
-const SignIn = () => {
-  const [state, setState] = useState({
-    user : {},
-    error: ""
-  });
+const SignIn = props => {
+  // const [state, setState] = useState({
+  //   error: ""
+  // });
   const inputValidator = e => {
     e.preventDefault();
-    setState({ error: "" });
+    // setState({ error: "" });
+    props.onInputValidator("");
     const isUserExist = users.find(
       user => user.email === e.target.children[2].value
     );
     if (!isUserExist || isUserExist.password !== e.target.children[4].value) {
-      setState({ error: "Invalid email or password." });
+      // setState({ error: "Invalid email or password." });
+      props.onInputValidator("Invalid email or password.");
     } else {
       localStorage.setItem("userEmail", `${e.target.children[2].value}`);
       if (isUserExist.title === "Developer") {
@@ -28,7 +32,7 @@ const SignIn = () => {
   };
   return (
     <form onSubmit={inputValidator} method="POST">
-      <p className="errors">{state.error}</p>
+      <p className="errors">{props.error}</p>
       <label>Email address</label>
       <input type="text" />
       <label>Password</label>
@@ -48,4 +52,18 @@ const SignIn = () => {
     </form>
   );
 };
-export default SignIn;
+
+const mapStateToProps = state => {
+  return {
+    error: state.error
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onInputValidator: errors =>
+      dispatch({ type: actionTypes.VALIDATE, error: errors })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
